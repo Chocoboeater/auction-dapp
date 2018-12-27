@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auction DAPP</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Auction DAPP</h1>
+
+        <h2 id="info"></h2>
+        <p id="details"></p>
+        <img id="loader" src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif">
+
+        <label for="name" class="col-lg-2 control-label">拍卖品：</label>
+        <input id="name" type="text">
+        <label for="name" class="col-lg-2 control-label">价格：</label>
+        <input id="price" type="text">
+
+        <div class="buttons">
+          <button id="checkBtn">查看当前拍卖</button>
+          <button id="startBtn">发起拍卖</button>
+          <button id="finishBtn">确认结束</button>
+          <button id="bidBtn">报价</button>
+          <button id="takeMoneyBtn">取回</button>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="notice">
+      <h4> 注意事项 ： </h6>
+      <ul>
+        <li>“查看当前拍卖”可以更新拍卖剩余时间</li>
+        <li>“发起拍卖”可以发起拍卖，“拍卖品”输入框的字符串会被传入，起拍价固定为0</li>
+        <li>“发起拍卖”需要上一次拍卖被确认结束</li>
+        <li>“发起拍卖”后默认的最高出价者是发起者</li>
+        <li>“报价”需要高于当前最高价，成功后最高出价者变更</li>
+        <li>“取回”可取回所有参与拍卖但未成交（且不包括在当前最高出价内）的金额</li>
+        <li>“确认结束”需要由最高出价者进行确认</li>
+        <li>“确认结束”需要拍卖剩余时间为0，即经过120秒的拍卖时间</li>
+        <li>“确认结束”后发起拍卖者能够获得收益，并且可以进行下一次拍卖</li>
+        <li>每场拍卖序号唯一，每开始一场新的拍卖，Index序号加一</li>
+
+      </ul>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
