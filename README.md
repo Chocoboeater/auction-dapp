@@ -1,5 +1,5 @@
 # auction-dapp
-Simple Ethereum auction DAPP using Truffle framework.
+Simple Ethereum auction DApp using Truffle framework.
 
 ### Get Start
 
